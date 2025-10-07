@@ -950,36 +950,26 @@ body, html { overflow-x: hidden; }
   transition: background 0.12s ease;
 }
 
-/* ========== ADICIONES: imagen de fondo para "Sobre Nosotros" + estilos de video ========== */
-
-/* Estas reglas fueron añadidas AL FINAL: no tocan las reglas anteriores, solo colocan
-   la imagen de la finca como fondo del <section id="sobre-nosotros"> y aseguran que
-   los cajones y contenidos estén por encima (legibles). */
-
-#sobre-nosotros {
-  /* mantenemos tu degradado original y activamos stacking */
+#promesa-de-valor {
   position: relative;
   overflow: hidden;
-  /* background: ya la tienes arriba: no la tocamos */
 }
 
-/* imagen de fondo sutil detrás de toda la sección (no dentro de cajones) */
-#sobre-nosotros::before {
+#promesa-de-valor::before {
   content: "";
   position: absolute;
   inset: 0;
-  background-image: url('img/fincaArriba.png'); /* usa tu imagen */
+  background-image: url('img/fincaArriba.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  opacity: 0.12; /* controla intensidad: 0.12 = muy sutil */
+  opacity: 0.12;
   filter: grayscale(8%) contrast(0.98) brightness(0.96);
   z-index: 0;
   pointer-events: none;
 }
 
-/* ligera capa de color encima de la imagen para mantener lectura */
-#sobre-nosotros::after {
+#promesa-de-valor::after {
   content: "";
   position: absolute;
   inset: 0;
@@ -988,12 +978,10 @@ body, html { overflow-x: hidden; }
   pointer-events: none;
 }
 
-/* El contenedor principal debe estar por encima del fondo */
-#sobre-nosotros > .container {
+#promesa-de-valor > .container {
   position: relative;
   z-index: 2;
 }
-
 /* Aseguramos que grid y cajones se muestren por encima */
 .sobre-cajones, .sobre-grid, .sobre-info, .sobre-media {
   position: relative;
